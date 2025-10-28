@@ -3,22 +3,40 @@
 using namespace std;
 
 class banking{
-    int balance;
+    double balance;
     string accountNumber;
     public:
-        banking(int balance,string accountNumber){
+        banking(double balance,string accountNumber){
             this->balance=balance;
             this->accountNumber=accountNumber;
-            cout<<"account exists "<<endl;
-            cout<<"Balance is ->"<< this->balance;
-            cout<<" Account Number is ->"<< this->accountNumber;
+        }
+        void deposit(double deposit){
+            if(deposit>0){
+                balance+=deposit;
+            }
+        } 
+        void withdraw(double deposit){
+            if(deposit > 0 && deposit<=balance){
+                balance-=deposit;
+            }
+        }
+
+        double getBalance(){
+            return balance;
+        }
+        string getAccountNumber(){
+            return accountNumber;
         }
 };
 
 int main(){
-    int balance,accountBalance;
+    double balance;
+    string accountNumber;
     cout<<"Please Enter opening balance"<<endl;
-    cin>>balance>>accountBalance;
-    banking *nikhil=new banking(500,"001");
+    cin>>balance>>accountNumber;
+    banking* nikhil=new banking(balance,accountNumber);
+    double balance=nikhil->getBalance();
+    string accountNumberOf_particular_person=nikhil->getAccountNumber();
+    cout<<balance<<"->" << accountNumberOf_particular_person;
     return 0;
 }
