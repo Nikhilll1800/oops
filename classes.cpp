@@ -35,8 +35,9 @@ int main(){
     cout<<"Please Enter opening balance"<<endl;
     cin>>balance>>accountNumber;
     banking* nikhil=new banking(balance,accountNumber);
-    double balance=nikhil->getBalance();
-    string accountNumberOf_particular_person=nikhil->getAccountNumber();
-    cout<<balance<<"->" << accountNumberOf_particular_person;
+    double new_balance=nikhil->getBalance();
+    string new_account_number=nikhil->getAccountNumber();
+    nikhil->deposit(50);
+    cout<<nikhil->getBalance()<<"->" << new_account_number;
     return 0;
 }
