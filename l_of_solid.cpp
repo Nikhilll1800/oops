@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // interface
+// l ->  Liskov Substitution Principle (LSP)
 class Shape{
     public:
     virtual int getArea() const =0;
