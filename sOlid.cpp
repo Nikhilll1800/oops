@@ -36,6 +36,13 @@ class Circle:public Shape{
         }
 };
 
+class areaCalculator{
+public: 
+    double calculateArea(Shape& shape){
+        return shape.calculateArea();
+    }
+};
+
 // class areaCalculator{
 //     public:
 //     double calulateArea(const Rectangle& rect){
@@ -48,15 +55,17 @@ class Circle:public Shape{
 // };
 
 int main(){
-    Rectangle rect(4,5);
-    Circle cir(5);
-    // Use polymorphism
-    Shape* shapes[] = { &rect, &cir };
+    // Rectangle rect(4,5);
+    // Circle cir(5);
+    // // Use polymorphism
+    // Shape* shapes[] = { &rect, &cir };
 
-    for (auto shape : shapes) {
-        cout << "Area: " << shape->calculateArea() << endl;
-    }
+    // for (auto shape : shapes) {
+    //     cout << "Area: " << shape->calculateArea() << endl;
+    // }
 
+    Shape* s = new Rectangle(10, 5);
+    cout << s->calculateArea();
     return 0;
     // areaCalculator area;
     // cout<<"the area of rect is "<< rect.calulateArea(rect)<<endl;
